@@ -1,0 +1,190 @@
+/* Header */
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2.75rem;
+  padding-bottom: 1.1rem;
+  border-bottom: 3px double var(--rule);
+}
+
+.logo-group {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+.logo-eyebrow {
+  display: block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--brass);
+  margin-bottom: 0.3rem;
+}
+
+.logo-group h1 {
+  font-family: 'Fraunces', 'Source Serif 4', serif;
+  font-size: 2.15rem;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.logo-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--stamp-green);
+  flex-shrink: 0;
+}
+
+.header-marks {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.vol-tag {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: var(--ink-faint);
+  border: 1px solid var(--rule);
+  padding: 0.3rem 0.55rem;
+  border-radius: var(--radius-tab);
+}
+
+.theme-btn {
+  background: var(--paper-deep);
+  border: 1px solid var(--rule);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: var(--shadow-inset);
+  transition: transform 0.3s var(--ease), border-color 0.3s var(--ease);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-soft);
+}
+
+.theme-btn:hover {
+  border-color: var(--brass);
+  color: var(--brass);
+  transform: rotate(24deg);
+}
+
+.theme-btn:focus-visible,
+.search-btn:focus-visible,
+.audio-btn:focus-visible,
+.fav-action-btn:focus-visible,
+.fav-remove-btn:focus-visible,
+.fav-card-content:focus-visible,
+.source-link:focus-visible,
+#word-input:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.mode-icon {
+  width: 1.05rem;
+  height: 1.05rem;
+  display: block;
+}
+
+.mode-icon .moon-glyph { display: block; }
+.mode-icon .sun-glyph { display: none; }
+[data-theme="dark"] .mode-icon .moon-glyph { display: none; }
+[data-theme="dark"] .mode-icon .sun-glyph { display: block; }
+
+/* Search */
+
+.search-label {
+  display: block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 0.55rem;
+}
+
+.search-group {
+  display: flex;
+  align-items: stretch;
+  background: var(--paper-well);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-inset);
+  padding: 0.3rem;
+  position: relative;
+}
+
+.search-group::before,
+.search-group::after {
+  /* Decorative brass rivets. */
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--brass);
+  opacity: 0.55;
+  transform: translateY(-50%);
+}
+.search-group::before { left: 10px; }
+.search-group::after { right: 10px; }
+
+.search-group input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 0.8rem 1rem 0.8rem 1.6rem;
+  font-family: 'Source Serif 4', serif;
+  font-size: 1.1rem;
+  color: var(--ink);
+  outline: none;
+}
+
+.search-group input::placeholder {
+  color: var(--ink-faint);
+  font-style: italic;
+}
+
+.search-btn {
+  background: var(--stamp-green);
+  border: none;
+  width: 48px;
+  border-radius: var(--radius-tab);
+  cursor: pointer;
+  transition: background-color 0.2s var(--ease), transform 0.15s var(--ease);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--paper);
+}
+
+.search-btn:hover {
+  background: var(--stamp-green-deep);
+}
+
+.search-btn:active {
+  transform: scale(0.94);
+}
+
+.search-icon {
+  width: 1.05rem;
+  height: 1.05rem;
+}
+
+@media (max-width: 550px) {
+  .app-header { align-items: center; }
+  .logo-group h1 { font-size: 1.7rem; }
+}

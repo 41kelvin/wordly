@@ -1,0 +1,6 @@
+@import "./base/theme.css";
+@import "./base/reset.css";
+
+@import "./components/search.css";
+@import "./components/results.css";
+@import "./components/favorites.css";

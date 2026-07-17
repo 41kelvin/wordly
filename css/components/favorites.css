@@ -1,0 +1,136 @@
+/* Favorites */
+
+.favorites-section {
+  margin-top: 3.5rem;
+  padding-top: 1.75rem;
+  border-top: 3px double var(--rule);
+}
+
+.favorites-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1.5rem;
+}
+
+.favorites-header h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.favorites-count {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  color: var(--ink-faint);
+}
+
+.favorites-count::before {
+  content: 'No. ';
+}
+
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
+  gap: 1rem;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 2.75rem 1.5rem;
+  background: transparent;
+  border: 1px dashed var(--rule);
+  border-radius: var(--radius-card);
+  color: var(--ink-faint);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+}
+
+.fav-card {
+  position: relative;
+  background: var(--paper-deep);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-tab);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 0.9rem 0.85rem 1.3rem;
+  box-shadow: 0 1px 0 rgba(38, 34, 26, 0.05);
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+/* Punched-hole detail. */
+.fav-card::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0.55rem;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--paper);
+  transform: translateY(-50%);
+  box-shadow:
+    inset 0 1px 1px rgba(38, 34, 26, 0.3),
+    0 0 0 1.5px var(--brass);
+}
+
+.fav-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lift);
+  border-color: var(--brass);
+}
+
+.fav-card-content {
+  flex: 1;
+  cursor: pointer;
+  overflow: hidden;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  text-align: left;
+  padding: 0;
+}
+
+.fav-word {
+  font-family: 'Fraunces', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fav-phonetic {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--ink-faint);
+  margin-top: 0.15rem;
+}
+
+.fav-remove-btn {
+  background: transparent;
+  border: none;
+  color: var(--ink-faint);
+  cursor: pointer;
+  padding-left: 0.4rem;
+  transition: color 0.2s var(--ease), transform 0.2s var(--ease);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fav-remove-btn:hover {
+  color: var(--stamp-rust);
+  transform: scale(1.15);
+}
